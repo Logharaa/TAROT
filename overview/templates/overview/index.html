@@ -1,7 +1,7 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en" class="bg-slate-950 text-slate-200">
+<html lang="fr" class="bg-slate-950 text-slate-200">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> {# For mobile phones #}
@@ -17,7 +17,7 @@
             <div class="flex justify-center items-center gap-6 flex-col-reverse lg:items-start lg:flex-row">
                 {% if telescope_id == 1 %}
                     <figure>
-                        <img src="{% static "overview/tca.jpg" %}" alt="Photo TCA" class="h-96 w-full object-cover rounded-sm" />
+                        <img src="{% static "overview/tca.jpg" %}" alt="Photo TCA" class="h-96 w-full object-cover rounded-md" />
                     </figure>
                     <article class="max-w-lg">
                         <h2 class="text-3xl font-bold">Tarot Calern</h2>
@@ -25,7 +25,7 @@
                     </article>
                 {% elif telescope_id == 2 %}
                     <figure class="relative">
-                        <img src="{% static "overview/tch.jpg" %}" alt="Photo TCH" class="h-96 w-full object-cover rounded-sm" />
+                        <img src="{% static "overview/tch.jpg" %}" alt="Photo TCH" class="h-96 w-full object-cover rounded-md" />
                         <figcaption class="absolute top-0 left-1 text-black text-sm">© ESO</figcaption>
                     </figure>
                     <article class="max-w-lg">
@@ -34,7 +34,7 @@
                     </article>
                 {% elif telescope_id == 3 %}
                     <figure>
-                        <img src="{% static "overview/tre.jpg" %}" alt="Photo TRE" class="h-96 w-full object-cover rounded-sm" />
+                        <img src="{% static "overview/tre.jpg" %}" alt="Photo TRE" class="h-96 w-full object-cover rounded-md" />
                     </figure>
                     <article class="max-w-lg">
                         <h2 class="text-3xl font-bold">Tarot Réunion</h2>
@@ -42,7 +42,7 @@
                     </article>
                 {% elif telescope_id == 4 %}
                     <figure class="relative">
-                        <img src="{% static "overview/tnc.jpg" %}" alt="Photo TNC" class="h-96 w-full object-cover rounded-sm" />
+                        <img src="{% static "overview/tnc.jpg" %}" alt="Photo TNC" class="h-96 w-full object-cover rounded-md" />
                         <figcaption class="absolute top-0 left-1 text-gray-400 text-sm">© Alain Klotz</figcaption>
                     </figure>
                     <article class="max-w-lg">
