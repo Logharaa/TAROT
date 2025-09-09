@@ -1,5 +1,7 @@
+{% load static %}
+
 <!doctype html>
-<html lang="en" class="bg-slate-950 text-slate-100">
+<html lang="en" class="bg-slate-950 text-slate-200">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> {# For mobile phones #}
@@ -8,23 +10,49 @@
     </head>
 
     <body>
-        <h1 class="text-5xl font-semibold text-center mt-6">The TAROT Network</h1>
+        <h1 class="text-5xl font-semibold text-center mt-6">Le réseau TAROT</h1>
         <h2 class="text-gray-400 text-lg italic text-center mt-3">Télescope à action rapide pour les objets transitoires</h2>
 
-        <main class="mt-16">
-            <div>
-            {% if telescope_id == 1 %}
-                <h2 class="text-3xl font-semibold">Tarot Calern</h2>
-            {% elif telescope_id == 2 %}
-                <h2 class="text-3xl font-semibold">Tarot Chili</h2>
-            {% elif telescope_id == 3 %}
-                <h2 class="text-3xl font-semibold">Tarot Réunion</h2>
-            {% elif telescope_id == 4 %}
-                <h2 class="text-3xl font-semibold">Tarot Nouvelle-Calédonie</h2>
-            {% endif %}
+        <main class="mt-20 mx-3">
+            <div class="flex justify-center items-center gap-6 flex-col-reverse lg:items-start lg:flex-row">
+                {% if telescope_id == 1 %}
+                    <figure>
+                        <img src="{% static "overview/tca.jpg" %}" alt="Photo TCA" class="h-96 w-full object-cover rounded-sm" />
+                    </figure>
+                    <article class="max-w-lg">
+                        <h2 class="text-3xl font-bold">Tarot Calern</h2>
+                        <p class="mt-4">Installé sur le plateau de Calern, ce télescope a un diamètre de 250 mm, une focale de 800 mm et est équipé d'un capteur CCD ANDOR IKON couvrant un champ de 1,8 degré carré.</p>
+                    </article>
+                {% elif telescope_id == 2 %}
+                    <figure class="relative">
+                        <img src="{% static "overview/tch.jpg" %}" alt="Photo TCH" class="h-96 w-full object-cover rounded-sm" />
+                        <figcaption class="absolute top-0 left-1 text-black text-sm">© ESO</figcaption>
+                    </figure>
+                    <article class="max-w-lg">
+                        <h2 class="text-3xl font-bold">Tarot Chili</h2>
+                        <p class="mt-4">Installé sur le site de l'observatoire de La Silla au Chili, ce télescope a un diamètre de 250 mm et une focale de 800 mm.</p>
+                    </article>
+                {% elif telescope_id == 3 %}
+                    <figure>
+                        <img src="{% static "overview/tre.jpg" %}" alt="Photo TRE" class="h-96 w-full object-cover rounded-sm" />
+                    </figure>
+                    <article class="max-w-lg">
+                        <h2 class="text-3xl font-bold">Tarot Réunion</h2>
+                        <p class="mt-4">Installé à l'observatoire astronomique des Makes sur l'île de la Réunion, ce télescope a un diamètre de 180 mm, une focale de 500 mm et est équipé d'un CCD FLI Proline KAF-16803, couvrant un champ de 4,2 degrés carrés.</p>
+                    </article>
+                {% elif telescope_id == 4 %}
+                    <figure class="relative">
+                        <img src="{% static "overview/tnc.jpg" %}" alt="Photo TNC" class="h-96 w-full object-cover rounded-sm" />
+                        <figcaption class="absolute top-0 left-1 text-gray-400 text-sm">© Alain Klotz</figcaption>
+                    </figure>
+                    <article class="max-w-lg">
+                        <h2 class="text-3xl font-bold">Tarot Nouvelle-Calédonie</h2>
+                        <p class="mt-4">Ce télescope a été installé en mai 2024 à l'aérodrome de Ouatom, à La Foa en Nouvelle-Calédonie.</p>
+                    </article>
+                {% endif %}
             </div>
 
-            <div class="mt-3">
+            <div class="mt-3 flex justify-center gap-3 mb-3">
                 <a href="?telescope_id={{ telescope_id|add:"-1" }}" class="rounded-sm px-2 py-1 font-semibold bg-yellow-700 hover:bg-yellow-600 select-none {% if telescope_id == 1 %}pointer-events-none opacity-25{% else %}cursor-pointer{% endif %}">
                     Previous
                 </a>

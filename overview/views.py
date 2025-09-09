@@ -5,9 +5,7 @@ def index(request):
     # Get the telescope ID from the query string
     telescope_id = int(request.GET.get("telescope_id", 1))
 
-    print(telescope_id)
-
-    # Make sure it is within the range
+    # Make sure the ID is within the range
     if telescope_id < 1:
         telescope_id = 1
     else:
