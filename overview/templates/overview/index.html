@@ -11,7 +11,28 @@
         <h1 class="text-5xl font-semibold text-center mt-6">The TAROT Network</h1>
         <h2 class="text-gray-400 text-lg italic text-center mt-3">Télescope à action rapide pour les objets transitoires</h2>
 
-        <main>
+        <main class="mt-16">
+            <div>
+            {% if telescope_id == 1 %}
+                <h2 class="text-3xl font-semibold">Tarot Calern</h2>
+            {% elif telescope_id == 2 %}
+                <h2 class="text-3xl font-semibold">Tarot Chili</h2>
+            {% elif telescope_id == 3 %}
+                <h2 class="text-3xl font-semibold">Tarot Réunion</h2>
+            {% elif telescope_id == 4 %}
+                <h2 class="text-3xl font-semibold">Tarot Nouvelle-Calédonie</h2>
+            {% endif %}
+            </div>
+
+            <div class="mt-3">
+                <a href="?telescope_id={{ telescope_id|add:"-1" }}" class="rounded-sm px-2 py-1 font-semibold bg-yellow-700 hover:bg-yellow-600 select-none {% if telescope_id == 1 %}pointer-events-none opacity-25{% else %}cursor-pointer{% endif %}">
+                    Previous
+                </a>
+                
+                <a href="?telescope_id={{ telescope_id|add:"1"}}" class="rounded-sm px-2 py-1 font-semibold bg-green-700 hover:bg-green-600 select-none {% if telescope_id == 4 %}pointer-events-none opacity-25{% else %}cursor-pointer{% endif %}">
+                    Next
+                </a>
+            </div>
         </main>
     </body>
 </html>
